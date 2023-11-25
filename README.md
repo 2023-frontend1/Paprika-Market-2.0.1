@@ -1,8 +1,25 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<div align="center">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img  src="./public/logo.png"/>
+
+# 파프리카마켓
+_*당근마켓을 오마주한 토이 프로젝트 version 2.0.0입니다._
+
+</div>
+
+<br/>
+<br/>
+
+## 🙇‍♂️ 기여자
+박채윤
+유승원
+이윤신
+최혜선
+
+<br/>
+<br/>
+
+## 🗓 프로젝트 기간
+23.11.25 ~ 
