@@ -4,9 +4,9 @@ import {
   MarketPage,
   ProductPage,
   UserPage,
-  NotFoundPage,
-} from "../"
-import { createBrowserRouter } from "react-router-dom"
+  EtcPage,
+} from "../pages/@index"
+import { createBrowserRouter } from 'react-router-dom'
 
 const Router = createBrowserRouter([
   {
@@ -29,11 +29,11 @@ const Router = createBrowserRouter([
         path: "/user/:userId",
         element: <UserPage />,
       },
+      {
+        path: "/etc",
+        element: <EtcPage />,
+      }
     ],
-  },
-  {
-    path: "/*",
-    element: <NotFoundPage />,
   },
 ])
 
