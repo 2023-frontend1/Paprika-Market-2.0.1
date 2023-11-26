@@ -11,7 +11,7 @@ module.exports = {
 		ecmaVersion: 2020,
 		sourceType: 'module',
 	},
-	plugins: ['react', 'unused-imports', 'simple-import-sort', 'prettier'],
+	plugins: ['react', 'unused-imports', 'prettier'],
 	rules: {
 		'no-unused-vars': 'warn',
 		'react/jsx-uses-vars': 'error',
