@@ -34,7 +34,7 @@ const directionColumn = css`
 	flex-direction: column;
 `
 
-export {
+const flexAlign = {
 	alignCenter,
 	alignStart,
 	directionColumn,
@@ -44,3 +44,5 @@ export {
 	justifyCenter,
 	justifyStart,
 }
+
+export default flexAlign
