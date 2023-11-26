@@ -1,4 +1,4 @@
 const MarketPage = () => {
-  return <div>작업해주세요~</div>
+  return <div>작업해주세요MarketPage</div>
 }
 export default MarketPage

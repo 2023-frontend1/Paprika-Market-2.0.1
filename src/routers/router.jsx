@@ -5,7 +5,7 @@ import {
   ProductPage,
   UserPage,
   NotFoundPage,
-} from "../pages/@index"
+} from "../"
 import { createBrowserRouter } from "react-router-dom"
 
 const Router = createBrowserRouter([
