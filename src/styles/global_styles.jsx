@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
-import fontWeight from './themes/font_weight'
+import { color, fontSize, fontWeight } from './themes/@index'
 const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
+        
         box-sizing: border-box;
+
+        background-color: ${color.grayScale[100]};
+        color: ${color.grayScale[0]};
     }
 
     html {
@@ -17,18 +21,18 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-      font-size: ${fontSize.big};
+    font-size: ${fontSize.big};
         font-weight: ${fontWeight.bold};
     }
 
 
     h2 {
-      font-size: ${fontSize.big};
+        font-size: ${fontSize.big};
         font-weight: ${fontWeight.bold};
     }
 
     h3 {
-      font-size: ${fontSize.large};
+        font-size: ${fontSize.large};
         font-weight: ${fontWeight.bold};
     }
 
@@ -50,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     p, div, span {
-      font-size:${fontSize.small};
+        font-size:${fontSize.small};
     }
 `
 
