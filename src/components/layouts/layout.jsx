@@ -1,14 +1,14 @@
-import { Header, Footer, CenterBox } from "./componets/@index"
+import { Header, Footer, CenterBox } from './componets/@index'
 import { Outlet } from 'react-router-dom'
 const Layout = () => {
-  return (
-    <>
-      <Header />
-      <CenterBox>
-        <Outlet/>
-      </CenterBox>
-      <Footer />
-    </>
-  )
+	return (
+		<>
+			<Header />
+			<CenterBox>
+				<Outlet />
+			</CenterBox>
+			<Footer />
+		</>
+	)
 }
 export default Layout
