@@ -1,14 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
-import { color, fontSize, fontWeight } from './themes/@index'
+import { fontSize, fontWeight } from './themes/@index'
 const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         
         box-sizing: border-box;
-
-        background-color: ${color.grayScale[100]};
-        color: ${color.grayScale[0]};
     }
 
     html {
