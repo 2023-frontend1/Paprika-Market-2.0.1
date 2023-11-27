@@ -8,7 +8,7 @@ export default ImageBox
 
 const shapeCss = {
 	rectangle: css`
-		border-radius: 8px;
+		border-radius: 1rem;
 	`,
 	round: css`
 		border-radius: 50%;
@@ -16,24 +16,24 @@ const shapeCss = {
 }
 const sizeCss = {
 	tiny: css`
-		width: 24px;
-		height: 24px;
+		width: 2.45rem;
+		height: 2.45rem;
 	`,
 	small: css`
-		width: 40px;
-		height: 40px;
+		width: 4rem;
+		height: 4rem;
 	`,
 	medium: css`
-		width: 58px;
-		height: 58px;
+		width: 5.8rem;
+		height: 5.8rem;
 	`,
 	large: css`
-		width: 207px;
-		height: 207px;
+		width: 20.7rem;
+		height: 20.7rem;
 	`,
 	big: css`
-		width: 677px;
-		height: 500px;
+		width: 67.8rem;
+		height: 50rem;
 	`,
 }
 
