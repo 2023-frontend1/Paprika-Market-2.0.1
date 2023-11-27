@@ -1,17 +1,17 @@
 import { css, styled } from 'styled-components'
 
-const ImageBox = ({ shape, size, ...rest }) => {
+const ImageBox = ({ shape = 'default', size = 'medium', ...rest }) => {
 	return <S.Img_ImgBox $shape={shape} $size={size} {...rest} />
 }
 
 export default ImageBox
 
 const shapeCss = {
-	rectangle: css`
+	default: css`
 		border-radius: 1rem;
 	`,
 	round: css`
-		border-radius: 50%;
+		border-radius: 100rem;
 	`,
 }
 const sizeCss = {
