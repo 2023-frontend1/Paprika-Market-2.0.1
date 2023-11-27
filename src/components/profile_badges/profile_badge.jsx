@@ -2,12 +2,11 @@ import styled from 'styled-components'
 import color from '../../styles/themes/color'
 import flexAlign from '../../styles/themes/flex_align'
 import fontSize from '../../styles/themes/font_size'
-import fontWeight from '../../styles/themes/font_weight'
 
 const ProfileBadge = ({ name = '★', size = '38px' }) => {
 	return (
 		<S.Div_Wrapper $size={size}>
-			<S.P_TextStrFirst>{name[0]}</S.P_TextStrFirst>
+			<S.P_TextFirstCharacter>{name[0]}</S.P_TextFirstCharacter>
 		</S.Div_Wrapper>
 	)
 }
@@ -31,8 +30,9 @@ const Div_Wrapper = styled.div`
 	${flexAlign.flexCenter}
 `
 
-const P_TextStrFirst = styled.p`
+const P_TextFirstCharacter = styled.p`
 	/* 색상 */
+	background-color: rgba(0, 0, 0, 0);
 	color: ${color.grayScale[100]};
 
 	/* 텍스트 정렬 */
@@ -40,12 +40,9 @@ const P_TextStrFirst = styled.p`
 
 	/* 폰트 크기 */
 	font-size: ${fontSize.big};
-
-	/* 폰트 굵기 */
-	font-weight: ${fontWeight.bold};
 `
 
 const S = {
 	Div_Wrapper,
-	P_TextStrFirst,
+	P_TextFirstCharacter,
 }
