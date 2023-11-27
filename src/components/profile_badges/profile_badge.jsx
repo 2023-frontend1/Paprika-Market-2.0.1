@@ -32,7 +32,6 @@ const Div_Wrapper = styled.div`
 
 const P_TextFirstCharacter = styled.p`
 	/* 색상 */
-	background-color: rgba(0, 0, 0, 0);
 	color: ${color.grayScale[100]};
 
 	/* 텍스트 정렬 */
