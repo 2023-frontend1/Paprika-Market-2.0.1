@@ -32,7 +32,7 @@ const ArticleBox = ({
 
 export default ArticleBox
 
-const TextOverflowEclipseCss = css`
+const textOverflowEclipseCss = css`
 	margin: 0.5rem 0;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -54,15 +54,15 @@ const Sec_TextSection = styled.div`
 `
 
 const P_TextTitle = styled.p`
-	${TextOverflowEclipseCss}
+	${textOverflowEclipseCss}
 `
 
 const P_TextCost = styled.p`
-	${TextOverflowEclipseCss}
+	${textOverflowEclipseCss}
 	font-weight: ${fontWeight.bold};
 `
 const P_TextAddress = styled.p`
-	${TextOverflowEclipseCss}
+	${textOverflowEclipseCss}
 	font-size: ${fontSize.tiny};
 	font-weight: ${fontWeight.regular};
 `
