@@ -1,56 +1,64 @@
 import { css, styled } from 'styled-components'
 import { color, fontSize, fontWeight } from '../../styles/themes/@index'
 
-const Button = ({ variant, size, shape, children, ...rest }) => {
+const Button = ({
+	color = 'primary',
+	size = 'large',
+	shape = 'round',
+	border = 'default',
+	children,
+	...rest
+}) => {
 	return (
-		<S $variant={variant} $size={size} $shape={shape} {...rest}>
+		<S $color={color} $size={size} $shape={shape} $border={border} {...rest}>
 			{children}
 		</S>
 	)
 }
 export default Button
 
-const variant = {
+const borderStyle = {
+	default: css``,
+	orange: css`
+		border: 1px solid ${color.orange[50]};
+	`,
+	green: css`
+		border: 1px solid ${color.green[50]};
+	`,
+	red: css`
+		border: 1px solid ${color.red[50]};
+	`,
+	gray: css`
+		border: 1px solid ${color.grayScale[80]};
+	`,
+}
+
+const buttonColor = {
 	primary: css`
 		background-color: ${color.orange[100]};
 		color: white;
-		&:hover {
-			background-color: ${color.orange[50]};
-		}
 	`,
 	white: css`
-		border: 1px solid ${color.grayScale[80]};
 		background-color: ${color.grayScale[100]};
-		&:hover {
-			background-color: ${color.grayScale[80]};
-		}
 	`,
 	gray: css`
 		background-color: ${color.grayScale[80]};
-		&:hover {
-			opacity: 0.7;
-		}
 	`,
 }
 
-const size = {
-	small: css`
-		width: 84px;
-		padding: 1.2rem;
-	`,
-
-	medium: css`
-		width: 140px;
-		padding: 1rem 0px;
+const sizeCss = {
+	default: css`
+		width: auto;
+		padding: 1.2rem 1.6rem;
 	`,
 
 	large: css`
-		width: 160px;
-		height: 52px;
+		width: auto;
+		padding: 1.6rem 3.2rem;
 	`,
 }
 
-const shape = {
+const shapeCss = {
 	little: css`
 		border-radius: 4px;
 	`,
@@ -63,10 +71,15 @@ const shape = {
 }
 
 const S = styled.button`
-	${({ $variant }) => variant[$variant]};
-	${({ $size }) => size[$size]};
-	${({ $shape }) => shape[$shape]};
+	${({ $color }) => buttonColor[$color]};
+	${({ $size }) => sizeCss[$size]};
+	${({ $shape }) => shapeCss[$shape]};
+	${({ $border }) => borderStyle[$border]};
 	font-weight: ${fontWeight.bold};
 	font-size: ${fontSize.tiny};
 	cursor: pointer;
+	display: inline-block;
+	&:hover {
+		opacity: 0.7;
+	}
 `
