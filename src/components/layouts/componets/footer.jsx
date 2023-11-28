@@ -61,8 +61,10 @@ const Footer = () => {
 					</S.Div_FooterNav>
 					<S.Div_DownLoadWrap>
 						<S.P_DownLoadText>파프리카 앱 다운로드</S.P_DownLoadText>
-						<button>app store</button>
-						<button>google play</button>
+						{/* <Div_ButtonWrap>
+							<Button>app store</Button>
+							<Button>google play</Button>
+						</Div_ButtonWrap> */}
 					</S.Div_DownLoadWrap>
 				</S.Sec_FirstSection>
 				<S.Sec_SecondSection>
@@ -140,7 +142,11 @@ const Li_NavList = styled.li`
 	}
 `
 const Div_DownLoadWrap = styled.div`
-	margin-right: 18rem;
+	margin-right: 16rem;
+	${flexAlign.directionColumn}
+`
+const Div_ButtonWrap = styled.div`
+	${flexAlign.justifyBetween}
 `
 const P_DownLoadText = styled.p`
 	font-weight: ${fontWeight.bold};
@@ -182,6 +188,7 @@ const S = {
 	Li_NavList,
 	Div_DownLoadWrap,
 	P_DownLoadText,
+	Div_ButtonWrap,
 	Sec_SecondSection,
 	Div_InquiryBox,
 	A_Link,
