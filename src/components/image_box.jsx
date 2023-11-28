@@ -1,9 +1,7 @@
 import { css, styled } from 'styled-components'
 
-const ImageBox = ({ shape = 'default', width, height, ...rest }) => {
-	return (
-		<S.Img_ImgBox $shape={shape} $width={width} $height={height} {...rest} />
-	)
+const ImageBox = ({ shape = 'default', ...rest }) => {
+	return <S.Img_ImgBox $shape={shape} {...rest} />
 }
 
 export default ImageBox
@@ -19,8 +17,6 @@ const shapeCss = {
 
 const Img_ImgBox = styled.img`
 	${({ $shape }) => shapeCss[$shape]}
-	width: ${($width) => $width};
-	height: ${($height) => $height};
 `
 
 const S = {
