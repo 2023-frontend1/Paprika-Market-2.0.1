@@ -6,7 +6,7 @@ import fontSize from '../../styles/themes/font_size'
 const ProfileBadge = ({ name = '★', size = '38px' }) => {
 	return (
 		<S.Div_Wrapper $size={size}>
-			<S.P_TextFirstCharacter>{name[0]}</S.P_TextFirstCharacter>
+			<S.P_TextFirstCharacter>{name.substring(0, 2)}</S.P_TextFirstCharacter>
 		</S.Div_Wrapper>
 	)
 }
@@ -38,7 +38,7 @@ const P_TextFirstCharacter = styled.p`
 	text-align: center;
 
 	/* 폰트 크기 */
-	font-size: ${fontSize.big};
+	font-size: ${fontSize.medium};
 `
 
 const S = {
