@@ -7,7 +7,7 @@ import {
 	color,
 	flexAlign,
 } from '../../../styles/themes/@index'
-import { ServiceCatagory } from '../constant'
+import { serviceCatagory } from '../constant'
 import Button from '../../button/button'
 const Header = () => {
 	const navigate = useNavigate()
@@ -25,7 +25,7 @@ const Header = () => {
 						src={logo}
 						alt=""
 					/>
-					{ServiceCatagory.map((info, idx) => {
+					{serviceCatagory.map((info, idx) => {
 						return (
 							<S.Li_Link
 								key={idx}

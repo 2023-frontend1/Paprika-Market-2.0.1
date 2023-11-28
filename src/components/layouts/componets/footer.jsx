@@ -5,7 +5,7 @@ import {
 	fontSize,
 	fontWeight,
 } from '../../../styles/themes/@index'
-import { HelpCatagory, MoreAboutCatagory, ServiceCatagory } from '../constant'
+import { helpCatagory, moreAboutCatagory, serviceCatagory } from '../constant'
 const Footer = () => {
 	return (
 		<S.Foo_Footer>
@@ -13,7 +13,7 @@ const Footer = () => {
 				<S.Sec_FirstSection>
 					<S.Div_FooterNav>
 						<Ul_TextUl>
-							{ServiceCatagory.map((info, idx) => {
+							{serviceCatagory.map((info, idx) => {
 								return (
 									<S.Li_NavList
 										key={idx}
@@ -27,7 +27,7 @@ const Footer = () => {
 							})}
 						</Ul_TextUl>
 						<Ul_TextUl>
-							{HelpCatagory.map((info, idx) => {
+							{helpCatagory.map((info, idx) => {
 								return (
 									<S.Li_NavList
 										key={idx}
@@ -41,7 +41,7 @@ const Footer = () => {
 							})}
 						</Ul_TextUl>
 						<Ul_TextUl>
-							{MoreAboutCatagory.map((info, idx) => {
+							{moreAboutCatagory.map((info, idx) => {
 								return (
 									<S.Li_NavList
 										key={idx}
