@@ -1,25 +1,18 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import logo from '/public/logo.png'
+import logo from '/logo.png'
 import {
 	fontSize,
 	fontWeight,
 	color,
 	flexAlign,
 } from '../../../styles/themes/@index'
+import ServiceCatagory from '../constants/service-catagory'
 const Header = () => {
 	const navigate = useNavigate()
 	const OnCategoryClick = (path) => {
 		navigate(path)
 	}
-	const naviInfo = [
-		{ text: '중고거래', url: '/market' },
-		{ text: '동네업체', url: '/company' },
-		{ text: '알바', url: '/part-time' },
-		{ text: '부동산 직거래', url: '/estate' },
-		{ text: '중고차 직거래', url: '/used-car' },
-	]
-
 	return (
 		<S.Div_HeaderContain>
 			<S.Div_HeaderNav>
@@ -31,7 +24,7 @@ const Header = () => {
 						src={logo}
 						alt=""
 					/>
-					{naviInfo.map((info, idx) => {
+					{ServiceCatagory.map((info, idx) => {
 						return (
 							<S.Li_Link
 								key={idx}
@@ -102,7 +95,7 @@ const Li_Link = styled.li`
 const Img_Logo = styled.img`
 	width: 5rem;
 	height: 5rem;
-	margin-right: 2.5rem;
+	margin-right: 1.5rem;
 `
 
 const S = {
