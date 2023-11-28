@@ -11,11 +11,11 @@ const ArticleBox = ({
 	address = '⚠️ No Data',
 	numInterest = '⚠️',
 	numChat = '⚠️',
-	imgSrc = 'https://source.unsplash.com/random/?cat',
+	imgSrc = 'logo.png',
 }) => {
 	return (
 		<S.Div_Container>
-			<ImageBox src={imgSrc} width="100%" style={{ aspectRadio: '1/1' }} />
+			<ImageBox src={imgSrc} width="100%" style={{ aspectRatio: '1/1' }} />
 			<S.Sec_TextSection>
 				<P_TextTitle>{title}</P_TextTitle>
 				<S.P_TextCost>{price}</S.P_TextCost>
