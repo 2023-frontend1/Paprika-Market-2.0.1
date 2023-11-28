@@ -5,11 +5,7 @@ import {
 	fontSize,
 	fontWeight,
 } from '../../../styles/themes/@index'
-import {
-	HelpCatagory,
-	MoreAboutCatagory,
-	ServiceCatagory,
-} from '../constants/@index'
+import { HelpCatagory, MoreAboutCatagory, ServiceCatagory } from '../constant'
 const Footer = () => {
 	return (
 		<S.Foo_Footer>

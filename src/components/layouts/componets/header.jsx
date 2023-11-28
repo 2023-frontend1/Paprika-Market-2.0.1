@@ -7,7 +7,7 @@ import {
 	color,
 	flexAlign,
 } from '../../../styles/themes/@index'
-import ServiceCatagory from '../constants/service-catagory'
+import { ServiceCatagory } from '../constant'
 import Button from '../../button/button'
 const Header = () => {
 	const navigate = useNavigate()
@@ -46,11 +46,11 @@ const Header = () => {
 						placeholder="물품이나 동네를 검색해보세요"
 					/>
 				</form>
-				<Button color="white" shape="little" border='gray'>
+				<Button color="white" shape="little" border="gray">
 					채팅하기
 				</Button>
 			</S.Div_SearchArea>
-		</S.Div_HeaderContain>	
+		</S.Div_HeaderContain>
 	)
 }
 export default Header
@@ -80,7 +80,7 @@ const Div_SearchArea = styled.div`
 const Inp_SearchInput = styled.input`
 	border: none;
 	background-color: ${color.grayScale[80]};
-	font-size: ${fontSize.small	};
+	font-size: ${fontSize.small};
 	border-radius: 1.5rem;
 	width: 28rem;
 	height: 40px;
