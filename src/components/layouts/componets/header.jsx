@@ -8,7 +8,7 @@ import {
 	flexAlign,
 } from '../../../styles/themes/@index'
 import { serviceCatagory } from '../constant'
-import Button from '../../button/button'
+import { Button } from '../../@index'
 const Header = () => {
 	const navigate = useNavigate()
 	const OnCategoryClick = (path) => {
