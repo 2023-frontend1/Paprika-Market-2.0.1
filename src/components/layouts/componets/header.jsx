@@ -63,6 +63,7 @@ const Div_HeaderContain = styled.div`
 	background-color: ${color.grayScale[100]};
 	z-index: 100;
 	${flexAlign.flexCenter}
+	${flexAlign.justifyCenter}
 `
 
 const Div_HeaderNav = styled.div`
