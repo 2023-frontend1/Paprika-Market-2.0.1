@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import color from '../../styles/themes/color'
-import flexAlign from '../../styles/themes/flex_align'
-import fontSize from '../../styles/themes/font_size'
+import { color, flexAlign, fontSize } from '../styles/themes/@index'
 
 const ProfileBadge = ({ name = '★', size = '38px' }) => {
 	return (
