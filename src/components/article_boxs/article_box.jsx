@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
-import flexAlign from '../../styles/themes/flex_align'
-import fontSize from '../../styles/themes/font_size'
-import fontWeight from '../../styles/themes/font_weight'
+import { flexAlign, fontSize, fontWeight } from '../../styles/themes/@index'
 
 import ImageBox from '../image_box'
 
