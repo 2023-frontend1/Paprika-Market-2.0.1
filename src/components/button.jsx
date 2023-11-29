@@ -6,7 +6,7 @@ import {
 	fontWeight,
 } from '../../styles/themes/@index'
 
-const Button = ({
+const Button = ({	
 	bgColor = color.orange[100],
 	theme = 'default',
 	border = 'default',
