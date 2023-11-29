@@ -1,10 +1,5 @@
 import { css, styled } from 'styled-components'
-import {
-	color,
-	flexAlign,
-	fontSize,
-	fontWeight,
-} from '../../styles/themes/@index'
+import { color, flexAlign, fontSize, fontWeight } from '../styles/themes/@index'
 
 const Button = ({	
 	bgColor = color.orange[100],
