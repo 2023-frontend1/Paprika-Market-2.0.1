@@ -16,7 +16,7 @@ const ArticleBox = ({
 			<ImageBox src={imgSrc} width="100%" style={{ aspectRatio: '1/1' }} />
 			<S.Sec_TextSection>
 				<P_TextTitle>{title}</P_TextTitle>
-				<S.P_TextCost>{price}</S.P_TextCost>
+				<S.P_TextCost>{price} 원</S.P_TextCost>
 				<S.P_TextAddress>{address}</S.P_TextAddress>
 				<S.Sec_VotingResultSection>
 					<S.Spa_TextVotingItem>관심 {numInterest}</S.Spa_TextVotingItem>
