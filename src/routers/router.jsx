@@ -1,12 +1,12 @@
-import Layout from '../components/layouts/layout'
+import { createBrowserRouter } from 'react-router-dom'
+import { Layout } from '../components/@index'
 import {
+	EtcPage,
 	MainPage,
 	MarketPage,
 	ProductPage,
 	UserPage,
-	EtcPage,
 } from '../pages/@index'
-import { createBrowserRouter } from 'react-router-dom'
 
 const Router = createBrowserRouter([
 	{

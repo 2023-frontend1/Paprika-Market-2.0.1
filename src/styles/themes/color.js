@@ -16,7 +16,7 @@ const color = {
 	},
 	grayScale: {
 		100: '#FFFFFF',
-		80: '#CBCBCB',
+		80: '#DDDDDD',
 		60: '#989898',
 		40: '#666666',
 		20: '#3D3D3D',
