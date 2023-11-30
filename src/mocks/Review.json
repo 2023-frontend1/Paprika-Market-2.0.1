@@ -1,0 +1,116 @@
+{
+	"reviews": [
+		{
+			"reviewId": 1,
+			"description": "내취향에 딱이네요",
+			"userId": 1,
+			"createAt": "2023-09-20",
+			"productId": 4
+		},
+		{
+			"reviewId": 2,
+			"description": "감사합니다",
+			"userId": 2,
+			"createAt": "2023-10-20",
+			"productId": 25
+		},
+		{
+			"reviewId": 3,
+			"description": "믿고 거래했어요~~^^",
+			"userId": 3,
+			"createAt": "2023-10-20",
+			"productId": 2
+		},
+		{
+			"reviewId": 4,
+			"description": "친절하시고 옷 잘삿어요 감사합니다",
+			"userId": 4,
+			"createAt": "2023-10-20",
+			"productId": 3
+		},
+		{
+			"reviewId": 5,
+			"description": "좋은 제품 빨리 보내주셔서 감사합니다!!",
+			"userId": 6,
+			"createAt": "2023-10-20",
+			"productId": 1
+		},
+		{
+			"reviewId": 6,
+			"description": "좋은 물건 잘 받았습니다 좋은 하루 보내세요",
+			"userId": 7,
+			"createAt": "2023-10-20",
+			"productId": 18
+		},
+		{
+			"reviewId": 7,
+			"description": "잘 있겠습니다",
+			"userId": 1,
+			"createAt": "2023-10-20",
+			"productId": 16
+		},
+		{
+			"reviewId": 8,
+			"description": "언제 사용하게될지는 모르지만 ^^* 고이 잘 뒀습니다. 고맙습니다.",
+			"userId": 1,
+			"createAt": "2023-10-20",
+			"productId": 11
+		},
+		{
+			"reviewId": 9,
+			"description": "농장 연못에 넣었습니다. 물고기들 놀이터가 되라고. 좋은 물건 저렴한 가격에 주셔서 감사합니다. 항상 건*행 하세요.~~~~",
+			"userId": 10,
+			"createAt": "2023-10-20",
+			"productId": 13
+		},
+		{
+			"reviewId": 10,
+			"description": "악력기 싸게 내주신것 뿐만 아니라 운동에 대해서 알려주셔서 너무 감사합니다!",
+			"userId": 3,
+			"createAt": "2023-10-20",
+			"productId": 20
+		},
+		{
+			"reviewId": 11,
+			"description": "남편 통해서 잘 받았습니다 : ) 덕분에 아기 다리 힘 잘 키우겠어요! 좋은 하루 되시고 건강 유의 하셔요!",
+			"userId": 4,
+			"createAt": "2023-10-20",
+			"productId": 21
+		},
+		{
+			"reviewId": 12,
+			"description": "너무좋은 제품을 엄청나게 저렴한 가격으로 구매했습니다 사용 설명도 충분해주시고 너무너무 젠틀 매너 짱짱맨 감사합니다 잘 쓰겠습니다",
+			"userId": 6,
+			"createAt": "2023-10-20",
+			"productId": 7
+		},
+		{
+			"reviewId": 13,
+			"description": "고맙습니다! 덕분에 좋은 물건 구매할수 있었어요~ ",
+			"userId": 7,
+			"createAt": "2023-10-20",
+			"productId": 17
+		},
+		{
+			"reviewId": 14,
+			"description": "잘 쓰겠습니다!",
+			"userId": 9,
+			"createAt": "2023-10-20",
+			"productId": 23
+		},
+		{
+			"reviewId": 15,
+			"description": "잘 쓰겠습니다. 컬러tv 인상적이었어요.ㅎ",
+			"userId": 9,
+			"createAt": "2023-10-20",
+			"productId": 9
+		},
+		{
+			"reviewId": 16,
+			"description": "이게 뭐냐?",
+			"userId": 8,
+			"createAt": "2023-10-20",
+			"productId": 8
+		}
+	]
+}
