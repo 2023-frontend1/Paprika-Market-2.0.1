@@ -41,6 +41,7 @@ const Div_Container = styled.div`
 	width: 22rem;
 	height: 36rem;
 	padding: 3px;
+	cursor: pointer;
 
 	${flexAlign.directionColumn}
 	${flexAlign.alignCenter}
