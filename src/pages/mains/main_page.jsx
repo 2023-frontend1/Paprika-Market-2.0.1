@@ -1,23 +1,25 @@
-import Button from '../../components/button/button'
+import { Button } from '../../components/@index'
 import styled from 'styled-components'
-import {
-	color,
-	flexAlign,
-	fontSize,
-	fontWeight,
-} from '../../styles/themes/@index'
-import mainTopImg from '/main_top.png'
-import mainSecondImg from '/main_second.webp'
-import mainThirdImg from '/main_third.webp'
-import mainFourthImg from '/main_fourth.webp'
-import mainLastImg from '/main_last.webp'
+import { color, fontSize, fontWeight } from '../../styles/themes/@index'
+import Wrapper from './wrapper'
+import mainTop from '/img_mains/main_top.png'
+import mainSecond from '/img_mains/main_second.webp'
+import mainThird from '/img_mains/main_third.webp'
+import mainFourth from '/img_mains/main_fourth.webp'
+import mainLast from '/img_mains/main_last.webp'
 
 const MainPage = () => {
 	return (
 		<>
-			<S.Wrapper $bgColor={color.orange[0]}>
+			<Wrapper
+				bgColor={color.orange[0]}
+				imgWidth="60rem"
+				imgHeight="70rem"
+				src={mainTop}
+				marginTop="68px"
+				direction="row-reverse"
+			>
 				<div>
-					<S.ContentTitle></S.ContentTitle>
 					<S.Title>
 						당신 근처의
 						<br></br>
@@ -28,15 +30,15 @@ const MainPage = () => {
 						파프리카에서 가까운 이웃과 함께해요
 					</S.Content>
 					<div>
-						<Button style={{ marginRight: '10px' }}>Google Play</Button>
-						<Button>Google Play</Button>
+						<Button theme="dark" style={{ marginRight: '10px' }}>
+							Google Play
+						</Button>
+						<Button theme="dark">Google Play</Button>
 					</div>
 				</div>
-				<S.Img src={mainTopImg} />
-			</S.Wrapper>
+			</Wrapper>
 
-			<S.Wrapper>
-				<S.Img src={mainSecondImg} />
+			<Wrapper bgColor={color.grayScale[100]} src={mainSecond}>
 				<div>
 					<S.ContentTitle>중고거래</S.ContentTitle>
 					<S.Title>
@@ -51,21 +53,21 @@ const MainPage = () => {
 					</S.Content>
 					<div>
 						<Button
-							color="gray"
-							size="default"
-							shape="normal"
+							bgColor={color.grayScale[80]}
+							size="fit"
+							shape="slightly"
 							style={{ marginRight: '10px' }}
 						>
 							인기 매물 보기
 						</Button>
-						<Button color="gray" size="default" shape="normal">
+						<Button bgColor={color.grayScale[80]} size="fit" shape="slightly">
 							믿을 수 있는 중고거래
 						</Button>
 					</div>
 				</div>
-			</S.Wrapper>
+			</Wrapper>
 
-			<S.Wrapper $bgColor={color.red[0]}>
+			<Wrapper bgColor={color.red[0]} src={mainThird} direction="row-reverse">
 				<div>
 					<S.ContentTitle>동네생활</S.ContentTitle>
 					<S.Title>
@@ -78,15 +80,13 @@ const MainPage = () => {
 						<br></br>
 						공감과 댓글로 나누어요.
 					</S.Content>
-					<Button color="gray" size="default" shape="normal">
+					<Button bgColor={color.grayScale[80]} size="fit" shape="slightly">
 						우리 동네 이야기
 					</Button>
 				</div>
-				<S.Img src={mainThirdImg}></S.Img>
-			</S.Wrapper>
+			</Wrapper>
 
-			<S.Wrapper>
-				<S.Img src={mainFourthImg} />
+			<Wrapper bgColor={color.grayScale[100]} src={mainFourth}>
 				<div>
 					<S.ContentTitle>알바</S.ContentTitle>
 					<S.Title>
@@ -99,13 +99,13 @@ const MainPage = () => {
 						<br></br>
 						파프리카로 동네 알바를 구할 수 있어요.
 					</S.Content>
-					<Button color="gray" size="default" shape="normal">
+					<Button bgColor={color.grayScale[80]} size="fit" shape="slightly">
 						내근처 알바 보기
 					</Button>
 				</div>
-			</S.Wrapper>
+			</Wrapper>
 
-			<S.Wrapper $bgColor={color.green[0]}>
+			<Wrapper bgColor={color.green[0]} src={mainLast} direction="row-reverse">
 				<div>
 					<S.ContentTitle>동네업체</S.ContentTitle>
 					<S.Title>
@@ -118,29 +118,17 @@ const MainPage = () => {
 						<br></br>
 						동네 곳곳의 업체들을 찾을 수 있어요.
 					</S.Content>
-					<Button color="gray" size="default" shape="normal">
+					<Button bgColor={color.grayScale[80]} size="fit" shape="slightly">
 						당근 동네업체 보기
 					</Button>
 				</div>
-				<S.Img src={mainLastImg} />
-			</S.Wrapper>
+			</Wrapper>
 		</>
 	)
 }
 
 export default MainPage
 
-const Wrapper = styled.div`
-	width: 1024px;
-	margin: 0px auto;
-	${flexAlign.alignCenter}
-	justify-content: space-between;
-	background-color: ${({ $bgColor }) => $bgColor};
-`
-const Img = styled.img`
-	width: 655px;
-	height: 750px;
-`
 const ContentTitle = styled.p`
 	font-weight: ${fontWeight.bold};
 	font-size: ${fontSize.small};
@@ -154,15 +142,13 @@ const Content = styled.p`
 	margin-bottom: 2rem;
 `
 const Title = styled.h1`
-	font-size: 42px;
-	line-height: 57px;
-	margin-bottom: 10px;
+	font-size: ${fontSize.huge};
+	line-height: 5.8rem;
+	margin-bottom: 1rem;
 `
 
 const S = {
 	Content,
 	ContentTitle,
-	Wrapper,
-	Img,
 	Title,
 }
