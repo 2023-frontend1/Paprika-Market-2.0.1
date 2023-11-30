@@ -10,9 +10,10 @@ const ArticleBox = ({
 	numInterest = '⚠️',
 	numChat = '⚠️',
 	imgSrc = 'logo.png',
+	...rest
 }) => {
 	return (
-		<S.Div_Container>
+		<S.Div_Container {...rest}>
 			<ImageBox src={imgSrc} width="100%" style={{ aspectRatio: '1/1' }} />
 			<S.Sec_TextSection>
 				<P_TextTitle>{title}</P_TextTitle>
