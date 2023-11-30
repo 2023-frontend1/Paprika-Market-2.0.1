@@ -113,6 +113,7 @@ const Foo_Footer = styled.footer`
 	border-top: 1px solid ${color.grayScale[80]};
 	width: 100vw;
 	background-color: ${color.grayScale[100]};
+	${flexAlign.justifyCenter};
 `
 const Div_FooterWrapper = styled.div`
 	max-width: 50%;
@@ -121,7 +122,7 @@ const Div_FooterWrapper = styled.div`
 `
 const Sec_FirstSection = styled.section`
 	padding: 3.6rem 0;
-	${flexAlign.justifyBetween}
+	${flexAlign.justifyCenter}
 `
 const Div_FooterNav = styled.div`
 	display: flex;
@@ -142,13 +143,13 @@ const Div_DownLoadWrap = styled.div`
 	${flexAlign.directionColumn}
 `
 const Div_ButtonWrap = styled.div`
-	${flexAlign.justifyBetween}
+	${flexAlign.justifyCenter}
 `
 const P_DownLoadText = styled.p`
 	font-weight: ${fontWeight.bold};
 `
 const Sec_SecondSection = styled.section`
-	${flexAlign.justifyBetween}
+	${flexAlign.justifyCenter}
 	padding: 2.4rem 0;
 	border-top: 1px solid ${color.grayScale[80]};
 `

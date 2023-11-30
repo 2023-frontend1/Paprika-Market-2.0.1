@@ -46,8 +46,13 @@ const Header = () => {
 						placeholder="물품이나 동네를 검색해보세요"
 					/>
 				</form>
-				<Button color="white" shape="little" border="gray">
-					채팅하기
+				<Button
+					bgColor={color.grayScale[100]}
+					shape="little"
+					size="fit"
+					border="thin"
+				>
+					채팅하기	
 				</Button>
 			</S.Div_SearchArea>
 		</S.Div_HeaderContain>
@@ -63,6 +68,7 @@ const Div_HeaderContain = styled.div`
 	background-color: ${color.grayScale[100]};
 	z-index: 100;
 	${flexAlign.flexCenter}
+	${flexAlign.justifyCenter}
 `
 
 const Div_HeaderNav = styled.div`
