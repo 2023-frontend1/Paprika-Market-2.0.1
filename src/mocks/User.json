@@ -1,0 +1,94 @@
+{
+	"users": [
+		{
+			"userId": 1,
+			"userNickname": "이지은",
+			"userLocation": "서울특별시",
+			"mannerTemperature": 49.2,
+			"itemIdList": [1, 11, 20],
+			"reviewIdList": [1, 5, 7, 8],
+			"mannerRate": [100, 413, 352, 443, 5123, 532, 10, 580]
+		},
+		{
+			"userId": 2,
+			"userNickname": "홍길동",
+			"userLocation": "대구광역시",
+			"mannerTemperature": 75.8,
+			"itemIdList": [2, 12, 21],
+			"reviewIdList": [2, 9],
+			"mannerRate": [200, 315, 420, 135, 650, 280, 50, 730]
+		},
+		{
+			"userId": 3,
+			"userNickname": "이영희",
+			"userLocation": "부산광역시",
+			"mannerTemperature": 31.5,
+			"itemIdList": [3, 13, 22],
+			"reviewIdList": [3, 6, 10],
+			"mannerRate": [150, 270, 380, 195, 480, 320, 80, 620]
+		},
+		{
+			"userId": 4,
+			"userNickname": "박철수",
+			"userLocation": "인천광역시",
+			"mannerTemperature": 92.1,
+			"itemIdList": [4, 14, 23],
+			"reviewIdList": [4, 11],
+			"mannerRate": [180, 390, 240, 305, 550, 430, 120, 670]
+		},
+		{
+			"userId": 5,
+			"userNickname": "송미영",
+			"userLocation": "광주광역시",
+			"mannerTemperature": 15.3,
+			"itemIdList": [5, 15, 24],
+			"reviewIdList": [],
+			"mannerRate": [90, 230, 300, 155, 510, 370, 60, 490]
+		},
+		{
+			"userId": 6,
+			"userNickname": "정태우",
+			"userLocation": "대전광역시",
+			"mannerTemperature": 62.7,
+			"itemIdList": [6, 16],
+			"reviewIdList": [5, 12],
+			"mannerRate": [120, 330, 270, 365, 590, 400, 90, 550]
+		},
+		{
+			"userId": 7,
+			"userNickname": "김지연",
+			"userLocation": "서울특별시",
+			"mannerTemperature": 42.8,
+			"itemIdList": [7, 17, 25, 26],
+			"reviewIdList": [6, 13],
+			"mannerRate": [170, 290, 320, 225, 470, 360, 70, 610]
+		},
+		{
+			"userId": 8,
+			"userNickname": "이동훈",
+			"userLocation": "부산광역시",
+			"mannerTemperature": 81.4,
+			"itemIdList": [8, 18, 26, 39],
+			"reviewIdList": [8, 18],
+			"mannerRate": [140, 250, 350, 185, 510, 340, 110, 580]
+		},
+		{
+			"userId": 9,
+			"userNickname": "한가은",
+			"userLocation": "인천광역시",
+			"mannerTemperature": 19.6,
+			"itemIdList": [9, 19],
+			"reviewIdList": [8, 15],
+			"mannerRate": [160, 310, 230, 275, 590, 420, 100, 650]
+		},
+		{
+			"userId": 10,
+			"userNickname": "장현우",
+			"userLocation": "대구광역시",
+			"mannerTemperature": 70.3,
+			"itemIdList": [10],
+			"reviewIdList": [9],
+			"mannerRate": [110, 370, 260, 335, 480, 450, 130, 700]
+		}
+	]
+}
