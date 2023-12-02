@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import { flexAlign, fontSize, fontWeight } from '../../styles/themes/@index'
-import ImageCarousel from '../ImageCarousel'
+import { flexAlign, fontSize, fontWeight } from '../styles/themes/@index'
+import ImageCarousel from './image_carousel'
 
 const ArticleBox = ({
 	title = '⚠️ No Data',

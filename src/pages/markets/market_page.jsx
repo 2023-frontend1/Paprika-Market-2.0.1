@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
 import styled from 'styled-components'
-import ArticleBox from '../../components/article_boxs/article_box'
+import ArticleBox from '../../components/article_box'
 import {
 	color,
 	flexAlign,
