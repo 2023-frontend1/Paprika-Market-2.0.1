@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { flexAlign, fontSize, fontWeight } from '../../styles/themes/@index'
-
-import ImageBox from '../image_box'
+import ImageCarousel from '../ImageCarousel'
 
 const ArticleBox = ({
 	title = '⚠️ No Data',
@@ -9,12 +8,12 @@ const ArticleBox = ({
 	address = '⚠️ No Data',
 	numInterest = '⚠️',
 	numChat = '⚠️',
-	imgSrc = 'logo.png',
+	imgSrcs = ['logo.png', 'logo.png', 'logo.png'],
 	...rest
 }) => {
 	return (
 		<S.Div_Container {...rest}>
-			<ImageBox src={imgSrc} width="100%" style={{ aspectRatio: '1/1' }} />
+			<ImageCarousel width="22rem" imgSrcs={imgSrcs} />
 			<S.Sec_TextSection>
 				<S.P_TextTitle>{title}</S.P_TextTitle>
 				<S.P_TextCost>{price} 원</S.P_TextCost>

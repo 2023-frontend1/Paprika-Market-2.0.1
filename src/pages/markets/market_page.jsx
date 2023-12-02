@@ -1,16 +1,14 @@
-import ArticleBox from '../../components/article_boxs/article_box'
 import { useNavigate } from 'react-router'
-import ProductList from '../../mocks/Product.json'
-import UserList from '../../mocks/User.json'
-import MarKetImg from '/img_markets/market_img.webp'
+import styled from 'styled-components'
+import ArticleBox from '../../components/article_boxs/article_box'
 import {
-	flexAlign,
 	color,
+	flexAlign,
 	fontSize,
 	fontWeight,
 } from '../../styles/themes/@index'
-import styled from 'styled-components'
 import topSearchCatagory from './top_category'
+import MarKetImg from '/img_markets/market_img.webp'
 
 const MarketPage = () => {
 	const navigate = useNavigate()
@@ -18,16 +16,10 @@ const MarketPage = () => {
 		navigate(path)
 	}
 
-	const location = ProductList.products.map((product) => {
-		const user = UserList.users.find((user) => user.userId === product.userId)
-		return {
-			...product,
-			userLocation: user ? user.userLocation : null,
-		}
-	})
-
 	return (
 		<S.Center>
+			<br></br>
+
 			<S.ImgSection>
 				<S.Box>
 					<S.H1>
@@ -44,20 +36,15 @@ const MarketPage = () => {
 
 			<S.ListSection>
 				<S.Title>중고거래 인기매물</S.Title>
-				{ProductList.products.map((item, index) => (
-					<ArticleBox
-						key={item.productId}
-						imgSrc={item.ImageSrcs[0]}
-						title={item.productName}
-						price={item.productPrice}
-						address={location[index].userLocation}
-						numChat={item.chattingCnt}
-						numInterest={item.interestCnt}
-						onClick={() => {
-							alert('ddd')
-						}}
-					/>
-				))}
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
+				<ArticleBox />
 			</S.ListSection>
 			<S.link
 				onClick={() => {
