@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components'
 import { color, flexAlign, fontSize, fontWeight } from '../styles/themes/@index'
 
-const Button = ({	
+const Button = ({
 	bgColor = color.orange[100],
 	theme = 'default',
 	border = 'default',
