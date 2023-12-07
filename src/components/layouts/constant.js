@@ -17,4 +17,4 @@ const serviceCatagory = [
 	{ text: '중고차 직거래', url: '/used-car' },
 ]
 
-export {helpCatagory,moreAboutCatagory,serviceCatagory}
+export { helpCatagory, moreAboutCatagory, serviceCatagory }
