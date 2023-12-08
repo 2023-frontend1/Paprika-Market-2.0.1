@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { color, flexAlign } from '../../styles/themes/@index'
+import { color, flexAlign } from '../../../styles/themes/@index'
 
 const Wrapper = ({
 	bgColor = color.orange[0],

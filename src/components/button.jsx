@@ -92,7 +92,7 @@ const But_PaprikaButton = styled.button`
 
 	padding: 1.2rem;
 	cursor: pointer;
-	/* display: inline-block; */
+	display: inline-block;
 	&:hover {
 		opacity: 0.7;
 	}

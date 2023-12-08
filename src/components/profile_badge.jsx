@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { color, flexAlign, fontSize } from '../styles/themes/@index'
+import autoColor from '../utils/auto_color'
 
-const ProfileBadge = ({ name = '★', size = '38px' }) => {
+const ProfileBadge = ({ name = '★', size = '38px', bgColor = autoColor }) => {
 	return (
-		<S.Div_Wrapper $size={size}>
+		<S.Div_Wrapper $size={size} $bgColor={bgColor}>
 			<S.P_TextFirstCharacter>{name.substring(0, 2)}</S.P_TextFirstCharacter>
 		</S.Div_Wrapper>
 	)
@@ -19,7 +20,7 @@ const Div_Wrapper = styled.div`
 	aspect-ratio: 1/1;
 
 	/* 색상 */
-	background-color: ${color.orange[100]};
+	background-color: ${({ $bgColor }) => $bgColor};
 
 	/* 경계선 */
 	border-radius: 100%;
@@ -37,6 +38,8 @@ const P_TextFirstCharacter = styled.p`
 
 	/* 폰트 크기 */
 	font-size: ${fontSize.medium};
+
+	text-shadow: 1px 1px 1px ${color.grayScale[0]};
 `
 
 const S = {

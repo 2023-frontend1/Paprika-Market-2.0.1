@@ -20,10 +20,8 @@ import axios from 'axios'
 const get12ProductSummeryByPage = async (page = 1) => {
 	try {
 		const products = await axios.get(`/api/products/${page}`, {})
-		console.log(products.data)
 		return products.data
 	} catch (error) {
-		console.log(error)
 		return {}
 	}
 }
