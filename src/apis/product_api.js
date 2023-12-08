@@ -35,6 +35,7 @@ const get12ProductSummeryByPage = async (page = 1) => {
  *  mannerTemperature: number
  *  productDetail: string
  *  productId: number
+ *  productName: string
  *  productPrice: number
  *  srcs: Array<string>
  *  status: ["onSale"|"complete"]
