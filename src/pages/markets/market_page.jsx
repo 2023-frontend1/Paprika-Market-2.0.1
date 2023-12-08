@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import styled from 'styled-components'
+import { get12ProductSummeryByPage } from '../../apis/product_api'
 import ArticleBox from '../../components/article_box'
 import {
 	color,
@@ -11,6 +13,30 @@ import topSearchCatagory from './constant'
 import MarKetImg from '/img_markets/market_img.webp'
 
 const MarketPage = () => {
+	const [productSummaries, setProductSummaries] = useState([])
+
+	const productSummariesPageNumber = useRef(1)
+
+	const getProductsSummariesByApi = async () => {
+		const getDatas = await get12ProductSummeryByPage(
+			productSummariesPageNumber.current
+		)
+		setProductSummaries((prev) => {
+			const _prev = [...prev]
+			_prev.push(...getDatas)
+			return _prev
+		})
+	}
+
+	const onIncreasePageNumber = () => {
+		productSummariesPageNumber.current += 1
+		getProductsSummariesByApi()
+	}
+
+	useEffect(() => {
+		getProductsSummariesByApi()
+	}, [setProductSummaries])
+
 	const navigate = useNavigate()
 	const OnCategoryClick = (path) => {
 		navigate(path)
@@ -36,23 +62,22 @@ const MarketPage = () => {
 
 			<S.Div_ListSection>
 				<S.H1_Title>중고거래 인기매물</S.H1_Title>
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
-				<ArticleBox />
+
+				{productSummaries.map((product, idx) => {
+					return (
+						<ArticleBox
+							key={idx}
+							title={product.productName}
+							price={product.productPrice}
+							address={product.userLocation}
+							numInterest={product.interestCnt}
+							numChat={product.chattingCnt}
+							imgSrcs={product.srcs}
+						/>
+					)
+				})}
 			</S.Div_ListSection>
-			<S.Div_Link
-				onClick={() => {
-					alert('ddd')
-				}}
-			>
-				인기매물 더보기
-			</S.Div_Link>
+			<S.Div_Link onClick={onIncreasePageNumber}>인기매물 더보기</S.Div_Link>
 
 			<S.Div_KeyWordSection>
 				<S.H3
