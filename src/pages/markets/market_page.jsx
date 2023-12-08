@@ -7,7 +7,7 @@ import {
 	fontSize,
 	fontWeight,
 } from '../../styles/themes/@index'
-import topSearchCatagory from './top_category'
+import topSearchCatagory from './constant'
 import MarKetImg from '/img_markets/market_img.webp'
 
 const MarketPage = () => {
@@ -17,11 +17,11 @@ const MarketPage = () => {
 	}
 
 	return (
-		<S.Center>
+		<S.Div_Center>
 			<br></br>
 
-			<S.ImgSection>
-				<S.Box>
+			<S.Div_ImgSection>
+				<S.Div_Box>
 					<S.H1>
 						믿을만한 <br />
 						이웃 간 중고거래
@@ -30,12 +30,12 @@ const MarketPage = () => {
 						동네 주민들과 가깝고 따뜻한 거래를 <br />
 						지금 경험해보세요.
 					</S.Span>
-					<S.MarketImg src={MarKetImg} />
-				</S.Box>
-			</S.ImgSection>
+					<S.Img_Market src={MarKetImg} />
+				</S.Div_Box>
+			</S.Div_ImgSection>
 
-			<S.ListSection>
-				<S.Title>중고거래 인기매물</S.Title>
+			<S.Div_ListSection>
+				<S.H1_Title>중고거래 인기매물</S.H1_Title>
 				<ArticleBox />
 				<ArticleBox />
 				<ArticleBox />
@@ -45,16 +45,16 @@ const MarketPage = () => {
 				<ArticleBox />
 				<ArticleBox />
 				<ArticleBox />
-			</S.ListSection>
-			<S.link
+			</S.Div_ListSection>
+			<S.Div_Link
 				onClick={() => {
 					alert('ddd')
 				}}
 			>
 				인기매물 더보기
-			</S.link>
+			</S.Div_Link>
 
-			<S.KeyWordSection>
+			<S.Div_KeyWordSection>
 				<S.H3
 					onClick={() => {
 						OnCategoryClick('/topKeywords')
@@ -75,23 +75,23 @@ const MarketPage = () => {
 						</S.Li>
 					))}
 				</S.Ul>
-			</S.KeyWordSection>
-		</S.Center>
+			</S.Div_KeyWordSection>
+		</S.Div_Center>
 	)
 }
 
 export default MarketPage
 
-const Center = styled.div`
+const Div_Center = styled.div`
 	margin-top: 64px;
 `
-const ImgSection = styled.div`
+const Div_ImgSection = styled.div`
 	${flexAlign.flexCenter};
 	width: 100vw;
 	background-color: ${color.orange[0]};
 	height: 31.6rem;
 `
-const Box = styled.div`
+const Div_Box = styled.div`
 	position: relative;
 	height: 100%;
 	box-sizing: border-box;
@@ -108,7 +108,7 @@ const Span = styled.span`
 	margin-top: 1.6rem;
 	display: block;
 `
-const ListSection = styled.div`
+const Div_ListSection = styled.div`
 	${flexAlign.justifyBetween}
 	flex-wrap: wrap;
 	width: 100%;
@@ -117,19 +117,19 @@ const ListSection = styled.div`
 	width: 76rem;
 	gap: 2.4rem;
 `
-const Title = styled.h1`
+const H1_Title = styled.h1`
 	text-align: center;
 	line-height: 4.4rem;
 	width: 100%;
 `
-const link = styled.div`
+const Div_Link = styled.div`
 	cursor: pointer;
 	text-decoration: underline;
 	margin: 4rem;
 	font-weight: ${fontWeight.bold};
 	${flexAlign.flexCenter};
 `
-const KeyWordSection = styled.div`
+const Div_KeyWordSection = styled.div`
 	${flexAlign.flexCenter};
 	flex-direction: row;
 	background-color: ${color.grayScale[80]};
@@ -153,7 +153,7 @@ const Ul = styled.ul`
 	display: flex;
 	flex-direction: row;
 `
-const MarketImg = styled.img`
+const Img_Market = styled.img`
 	width: 41.6rem;
 	position: absolute;
 	top: 0px;
@@ -161,17 +161,17 @@ const MarketImg = styled.img`
 `
 
 const S = {
-	Center,
-	ImgSection,
-	Box,
+	Div_Center,
+	Div_ImgSection,
+	Div_Box,
 	H1,
 	Span,
-	ListSection,
-	link,
-	KeyWordSection,
+	Div_ListSection,
+	Div_Link,
+	Div_KeyWordSection,
 	Ul,
 	Li,
 	H3,
-	MarketImg,
-	Title,
+	Img_Market,
+	H1_Title,
 }
