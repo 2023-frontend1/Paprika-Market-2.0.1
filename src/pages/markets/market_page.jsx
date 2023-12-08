@@ -9,15 +9,18 @@ import {
 	fontSize,
 	fontWeight,
 } from '../../styles/themes/@index'
+import changePrice from '../../utils/change_price'
 import topSearchCatagory from './constant'
 import MarKetImg from '/img_markets/market_img.webp'
 
 const MarketPage = () => {
+	/** 상품에 대한 요약 정보가 담긴 배열 */
 	const [productSummaries, setProductSummaries] = useState([])
-
+	/** 페이지 넘버를 기록 */
 	const productSummariesPageNumber = useRef(1)
-
-	const getProductsSummariesByApi = async () => {
+	const navigate = useNavigate()
+	/** 상품에 대한 요약 정보가 담긴 배열을 호출하고 상태로 관리하는 함수 */
+	const getNManageProductsSummariesByApi = async () => {
 		const getDatas = await get12ProductSummeryByPage(
 			productSummariesPageNumber.current
 		)
@@ -27,20 +30,15 @@ const MarketPage = () => {
 			return _prev
 		})
 	}
-
+	/** 페이지 넘버 갱신 함수 */
 	const onIncreasePageNumber = () => {
 		productSummariesPageNumber.current += 1
-		getProductsSummariesByApi()
+		getNManageProductsSummariesByApi()
 	}
 
 	useEffect(() => {
-		getProductsSummariesByApi()
+		getNManageProductsSummariesByApi()
 	}, [setProductSummaries])
-
-	const navigate = useNavigate()
-	const OnCategoryClick = (path) => {
-		navigate(path)
-	}
 
 	return (
 		<S.Div_Center>
@@ -68,11 +66,14 @@ const MarketPage = () => {
 						<ArticleBox
 							key={idx}
 							title={product.productName}
-							price={product.productPrice}
+							price={changePrice(product.productPrice)}
 							address={product.userLocation}
 							numInterest={product.interestCnt}
 							numChat={product.chattingCnt}
 							imgSrcs={product.srcs}
+							onClick={() => {
+								navigate(`/product/${product.productId}`)
+							}}
 						/>
 					)
 				})}
