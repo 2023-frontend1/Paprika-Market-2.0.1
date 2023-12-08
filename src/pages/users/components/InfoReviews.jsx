@@ -6,59 +6,25 @@ import {
 	fontWeight,
 } from '../../../styles/themes/@index'
 import ProfileBadge from '../../../components/profile_badge'
-const InfoReviews = () => {
+const InfoReviews = ({ usersum }) => {
 	return (
 		<S.ReviewList>
-			<S.ReviewOne>
-				<S.ProfileBlock>
-					<ProfileBadge />
-					<S.NickName>
-						닉네임 <S.Address> 주소</S.Address>{' '}
-					</S.NickName>
-				</S.ProfileBlock>
+			{usersum.reviews &&
+				usersum.reviews.map((review, idx) => {
+					return (
+						<S.ReviewOne key={idx}>
+							<S.ProfileBlock>
+								<ProfileBadge size="5rem"name={review.userNickname} />
+								<S.NickName>
+									{review.userNickname}
+									<S.Address> {review.userLocation}</S.Address>
+								</S.NickName>
+							</S.ProfileBlock>
 
-				<S.Content>리뷰가 들어갈 자리입니다.</S.Content>
-			</S.ReviewOne>
-			<S.ReviewOne>
-				<S.ProfileBlock>
-					<ProfileBadge />
-					<S.NickName>
-						닉네임 <S.Address> 주소</S.Address>{' '}
-					</S.NickName>
-				</S.ProfileBlock>
-
-				<S.Content>리뷰가 들어갈 자리입니다.</S.Content>
-			</S.ReviewOne>
-			<S.ReviewOne>
-				<S.ProfileBlock>
-					<ProfileBadge />
-					<S.NickName>
-						닉네임 <S.Address> 주소</S.Address>{' '}
-					</S.NickName>
-				</S.ProfileBlock>
-
-				<S.Content>리뷰가 들어갈 자리입니다.</S.Content>
-			</S.ReviewOne>
-			<S.ReviewOne>
-				<S.ProfileBlock>
-					<ProfileBadge />
-					<S.NickName>
-						닉네임 <S.Address> 주소</S.Address>{' '}
-					</S.NickName>
-				</S.ProfileBlock>
-
-				<S.Content>리뷰가 들어갈 자리입니다.</S.Content>
-			</S.ReviewOne>
-			<S.ReviewOne>
-				<S.ProfileBlock>
-					<ProfileBadge />
-					<S.NickName>
-						닉네임 <S.Address> 주소</S.Address>{' '}
-					</S.NickName>
-				</S.ProfileBlock>
-
-				<S.Content>리뷰가 들어갈 자리입니다.</S.Content>
-			</S.ReviewOne>
+							<S.Content>{review.description}</S.Content>
+						</S.ReviewOne>
+					)
+				})}
 		</S.ReviewList>
 	)
 }
@@ -71,6 +37,7 @@ const ReviewList = styled.ul`
 	justify-content: start;
 	align-items: start;
 	gap: 20px;
+	margin-top: 2rem;
 `
 
 const ReviewOne = styled.li`
@@ -94,11 +61,12 @@ const ProfileBlock = styled.div`
 `
 
 const NickName = styled.span`
-	font-size: ${fontSize.small};
+	font-size: ${fontSize.tiny};
+	font-weight: ${fontWeight.bold};
 `
 const Address = styled.span`
 	margin-left: 10px;
-	font-size: ${fontSize};
+	font-size: ${fontSize.tiny};
 	font-weight: ${fontWeight.thin};
 `
 

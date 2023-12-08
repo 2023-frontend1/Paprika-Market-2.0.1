@@ -93,6 +93,7 @@ export const handlers = [
 				productId: productId,
 				srcs: foundProduct.srcs,
 				productName: foundProduct.productName,
+				productPrice: foundProduct.productPrice,
 				interestCnt: foundProduct.interestCnt,
 				chattingCnt: foundProduct.chattingCnt,
 				status: foundProduct.status,
@@ -115,6 +116,7 @@ export const handlers = [
 					const userOne = findUserOneById(reviewOne.userId)
 					usersProductsReviews.push({
 						...reviewOne,
+						userLocation: userOne.userLocation,
 						userId: userOne.userId,
 						userNickname: userOne.userNickname,
 					})
@@ -128,6 +130,7 @@ export const handlers = [
 			userNickname: foundUser.userNickname,
 			userLocation: foundUser.userLocation,
 			mannerRate: foundUser.mannerRate,
+			mannerTemperature: foundUser.mannerTemperature,
 			products: [...usersProducts],
 			reviews: [...usersProductsReviews],
 		}

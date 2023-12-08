@@ -5,36 +5,96 @@ import {
 	fontSize,
 	fontWeight,
 } from '../../styles/themes/@index'
-import styled from 'styled-components'
+import { styled, css } from 'styled-components'
 import { InfoProducts, InfoRates, InfoReviews } from './components/@index'
+import { useParams, useSearchParams } from 'react-router-dom'
+import { getUserInfoById } from '../../apis/user_api'
+import { useEffect, useState } from 'react'
 
 const UserPage = () => {
+	const { userId } = useParams()
+	const [userSummaries, setUserSummaries] = useState({})
+
+	const getUserSummaries = async (id) => {
+		const userData = await getUserInfoById(id)
+		setUserSummaries(userData)
+	}
+	useEffect(() => {
+		getUserSummaries(userId)
+	}, [setUserSummaries])
+	const [queryParam, setQueryParam] = useSearchParams()
+	const changeParam = (value) => {
+		if (!value) {
+			queryParam.delete('kind')
+		} else {
+			queryParam.set('kind', value)
+		}
+		setQueryParam(queryParam)
+	}
+	const Subcomponents = {
+		reviews: <InfoReviews usersum={userSummaries} />,
+		manners: <InfoRates usersum={userSummaries} />,
+	}
 	return (
 		<CenterBox>
 			<S.Div_UserProfileSection>
-				<ProfileBadge size="7rem" />
+				<ProfileBadge size="7rem" name={userSummaries.userNickname} />
 				<S.Div_UserInfoTextsArea>
 					<S.H2_UserSignificantInfoText>
-						UserNickName
-						<S.Span_UserAddress>UserLocation ex 00시00구</S.Span_UserAddress>
+						{userSummaries.userNickname}
+						<S.Span_UserAddress>
+							{userSummaries.userLocation}
+						</S.Span_UserAddress>
 					</S.H2_UserSignificantInfoText>
 					<S.Ul_UserEvaluationInfoTexts>
-						<S.Li_InfoText>매너온도 36.5 재거래희망률 100%</S.Li_InfoText>
+						<S.Li_InfoText>
+							매너온도 {userSummaries.mannerTemperature}{' '}
+						</S.Li_InfoText>
 					</S.Ul_UserEvaluationInfoTexts>
 				</S.Div_UserInfoTextsArea>
 			</S.Div_UserProfileSection>
 
 			<S.Sec_UserFilterSection>
 				<S.Ul_UserFilterList>
-					<S.Li_EvaluationItem>판매 물풀 (1)</S.Li_EvaluationItem>
-					<S.Li_EvaluationItem>거래 후기 (1)</S.Li_EvaluationItem>
-					<S.Li_EvaluationItem>매너 칭찬</S.Li_EvaluationItem>
+					<S.Li_EvaluationItem
+						$isClicked={!queryParam.get('kind')}
+						onClick={() => {
+							changeParam('')
+						}}
+					>
+						{`판매 물품 (
+                        ${
+													userSummaries.products &&
+													userSummaries.products.length
+												} )`}
+					</S.Li_EvaluationItem>
+					<S.Li_EvaluationItem
+						$isClicked={queryParam.get('kind') === 'reviews'}
+						onClick={() => {
+							changeParam('reviews')
+						}}
+					>
+						{`거래 후기 (
+                        ${
+													userSummaries.reviews && userSummaries.reviews.length
+												} )`}
+					</S.Li_EvaluationItem>
+					<S.Li_EvaluationItem
+						$isClicked={queryParam.get('kind') === 'manners'}
+						onClick={() => {
+							changeParam('manners')
+						}}
+					>
+						매너 칭찬
+					</S.Li_EvaluationItem>
 				</S.Ul_UserFilterList>
 			</S.Sec_UserFilterSection>
 
-			<InfoProducts />
-			<InfoRates />
-			<InfoReviews />
+			{Subcomponents[queryParam.get('kind')] ? (
+				Subcomponents[queryParam.get('kind')]
+			) : (
+				<InfoProducts usersum={userSummaries} />
+			)}
 		</CenterBox>
 	)
 }
@@ -76,7 +136,29 @@ const Ul_UserEvaluationInfoTexts = styled.ul`
 `
 
 const Li_EvaluationItem = styled.li`
-	color: ${color.grayScale[60]};
+	color: ${({ $isClicked }) =>
+		$isClicked ? color.orange[100] : color.grayScale[60]};
+	font-weight: ${({ $isClicked }) =>
+		$isClicked ? fontWeight.bold : fontWeight.thin};
+	&:hover {
+		color: ${color.orange[100]};
+	}
+	position: relative;
+	display: inline-block;
+
+	${({ $isClicked }) =>
+		$isClicked &&
+		css`
+			&:before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 3px;
+				bottom: -17px;
+				left: 0;
+				background: ${color.orange[100]};
+			}
+		`};
 `
 
 const Sec_UserFilterSection = styled.section`

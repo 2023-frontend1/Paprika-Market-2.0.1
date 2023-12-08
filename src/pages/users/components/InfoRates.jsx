@@ -17,7 +17,7 @@ const MannerComment = [
 	' 나눔을 해주셨어요.',
 ]
 
-const InfoRates = () => {
+const InfoRates = ({ usersum }) => {
 	return (
 		<S.RateSection>
 			<S.Ul>
@@ -27,7 +27,7 @@ const InfoRates = () => {
 							<S.P>
 								{idx + 1}. {val}
 							</S.P>
-							<S.P>(칭찬인원) 명</S.P>
+							<S.P>{usersum.mannerRate && usersum.mannerRate[idx]} 명</S.P>
 						</S.Li>
 					)
 				})}

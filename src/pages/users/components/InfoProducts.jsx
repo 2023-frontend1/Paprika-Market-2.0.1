@@ -1,46 +1,29 @@
 import styled from 'styled-components'
 import { flexAlign } from '../../../styles/themes/@index'
-import ArticleBox from '../../../components/article_boxs/article_box'
-const InfoProducts = () => {
+import ArticleBox from '../../../components/article_box'
+import changePrice from '../../../utils/change_price'
+const InfoProducts = ({ usersum }) => {
 	return (
 		<>
 			<S.Sec_CardListSection>
-				<ArticleBox
-					title={'가방'}
-					price={'10,000'}
-					address={'서울시'}
-					numInterest={10}
-					numChat={30}
-					imgSrc={'https://source.unsplash.com/user/USERNAME'}
-					style={{ width: '20rem' }}
-					onClick={() => {
-						alert('날라간다.')
-					}}
-				/>{' '}
-				<ArticleBox
-					title={'가방'}
-					price={'10,000'}
-					address={'서울시'}
-					numInterest={10}
-					numChat={30}
-					imgSrc={'https://source.unsplash.com/user/USERNAME'}
-					style={{ width: '20rem' }}
-					onClick={() => {
-						alert('날라간다.')
-					}}
-				/>{' '}
-				<ArticleBox
-					title={'가방'}
-					price={'10,000'}
-					address={'서울시'}
-					numInterest={10}
-					numChat={30}
-					imgSrc={'https://source.unsplash.com/user/USERNAME'}
-					style={{ width: '20rem' }}
-					onClick={() => {
-						alert('날라간다.')
-					}}
-				/>{' '}
+				{usersum.products &&
+					usersum.products.map((item, idx) => {
+						return (
+							<ArticleBox
+								key={idx}
+								title={item.productName}
+								price={changePrice(item.productPrice)}
+								address={usersum.userLocation}
+								numInterest={item.interestCnt}
+								numChat={item.chattingCnt}
+								imgSrcs={item.srcs}
+								style={{ width: '20rem' }}
+								onClick={() => {
+									alert('날라간다.')
+								}}
+							/>
+						)
+					})}
 			</S.Sec_CardListSection>
 		</>
 	)

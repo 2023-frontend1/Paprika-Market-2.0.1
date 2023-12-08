@@ -1,14 +1,17 @@
 import styled, { css } from 'styled-components'
 import { flexAlign, fontSize, fontWeight } from '../styles/themes/@index'
 import ImageCarousel from './image_carousel'
-
 const ArticleBox = ({
 	title = '⚠️ No Data',
 	price = '⚠️ No Data',
 	address = '⚠️ No Data',
 	numInterest = '⚠️',
 	numChat = '⚠️',
-	imgSrcs = ['logo.png', 'logo.png', 'logo.png'],
+	imgSrcs = [
+		'https://github.com/2023-frontend1/Paprika-Market-2.0.1/raw/master/public/logo.png',
+		'https://github.com/2023-frontend1/Paprika-Market-2.0.1/raw/master/public/logo.png',
+		'https://github.com/2023-frontend1/Paprika-Market-2.0.1/raw/master/public/logo.png',
+	],
 	...rest
 }) => {
 	return (
