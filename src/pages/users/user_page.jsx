@@ -22,7 +22,9 @@ const UserPage = () => {
 	useEffect(() => {
 		getUserSummaries(userId)
 	}, [setUserSummaries])
+
 	const [queryParam, setQueryParam] = useSearchParams()
+
 	const changeParam = (value) => {
 		if (!value) {
 			queryParam.delete('kind')
@@ -63,10 +65,7 @@ const UserPage = () => {
 						}}
 					>
 						{`판매 물품 (
-                        ${
-													userSummaries.products &&
-													userSummaries.products.length
-												} )`}
+                        ${userSummaries.products?.length} )`}
 					</S.Li_EvaluationItem>
 					<S.Li_EvaluationItem
 						$isClicked={queryParam.get('kind') === 'reviews'}
@@ -75,9 +74,7 @@ const UserPage = () => {
 						}}
 					>
 						{`거래 후기 (
-                        ${
-													userSummaries.reviews && userSummaries.reviews.length
-												} )`}
+                        ${userSummaries.reviews?.length} )`}
 					</S.Li_EvaluationItem>
 					<S.Li_EvaluationItem
 						$isClicked={queryParam.get('kind') === 'manners'}
