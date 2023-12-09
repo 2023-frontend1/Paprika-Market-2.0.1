@@ -20,7 +20,7 @@ const ImageCarousel = ({
 
 	useEffect(() => {
 		timerStart()
-		if (carouselRef.current !== null) {
+		if (carouselRef.current !== null && imgSrcs.length > 1) {
 			carouselRef.current.style.transform = `translateX(-${
 				(curIdxRef.current * 100) / elementsNum
 			}%)`

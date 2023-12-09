@@ -17,7 +17,7 @@ const Div_Wrapper = styled.div`
 	${flexAlign.justifyCenter}
 `
 const Div_CenterAlign = styled.div`
-	max-width: 45%;
+	width: 40%;
 `
 
 const S = {

@@ -52,7 +52,7 @@ const Header = () => {
 					size="fit"
 					border="thin"
 				>
-					채팅하기	
+					채팅하기
 				</Button>
 			</S.Div_SearchArea>
 		</S.Div_HeaderContain>
