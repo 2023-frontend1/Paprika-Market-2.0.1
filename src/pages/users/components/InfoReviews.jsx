@@ -6,7 +6,9 @@ import {
 	fontWeight,
 } from '../../../styles/themes/@index'
 import ProfileBadge from '../../../components/profile_badge'
+import { useNavigate } from 'react-router-dom'
 const InfoReviews = ({ usersum }) => {
+	const navigate = useNavigate()
 	return (
 		<S.ReviewList>
 			{usersum.reviews &&
@@ -14,8 +16,12 @@ const InfoReviews = ({ usersum }) => {
 					return (
 						<S.ReviewOne key={idx}>
 							<S.ProfileBlock>
-								<ProfileBadge size="5rem"name={review.userNickname} />
-								<S.NickName>
+								<ProfileBadge size="5rem" name={review.userNickname} />
+								<S.NickName
+									onClick={() => {
+										navigate(`/user/${review.userId}`)
+									}}
+								>
 									{review.userNickname}
 									<S.Address> {review.userLocation}</S.Address>
 								</S.NickName>
@@ -63,6 +69,10 @@ const ProfileBlock = styled.div`
 const NickName = styled.span`
 	font-size: ${fontSize.tiny};
 	font-weight: ${fontWeight.bold};
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
 `
 const Address = styled.span`
 	margin-left: 10px;
