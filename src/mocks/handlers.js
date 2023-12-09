@@ -57,6 +57,7 @@ export const handlers = [
 		/** 응답 데이터 생성 */
 		const response = {
 			productId: foundProduct.productId,
+			productName: foundProduct.productName,
 			srcs: foundProduct.srcs,
 			productPrice: foundProduct.productPrice,
 			interestCnt: foundProduct.interestCnt,

@@ -27,6 +27,8 @@ const Div_Wrapper = styled.div`
 
 	/* 레이아웃 정렬 */
 	${flexAlign.flexCenter}
+
+	box-shadow: 1px 1px 3px ${color.grayScale[0]};
 `
 
 const P_TextFirstCharacter = styled.p`

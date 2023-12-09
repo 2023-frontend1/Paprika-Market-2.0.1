@@ -1,17 +1,32 @@
-import { ImageBox, CenterBox, ProfileBadge } from '../../components/@index'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
+import { getProductDetailById } from '../../apis/product_api'
+import { CenterBox, ImageCarousel, ProfileBadge } from '../../components/@index'
 import { flexAlign, fontSize, fontWeight } from '../../styles/themes/@index'
+import changePrice from '../../utils/change_price'
+
 const ProductPage = () => {
+	/** PathVariable 값 */
+	const { productId } = useParams()
+	const navigate = useNavigate()
+	/** 상품 정보가 담긴 객체를 상태로 관리 */
+	const [productDetail, setProductDetail] = useState({})
+	/** 상품 정보가 담긴 객체를 호출하고, 상태로 등록하는 함수 */
+	const getNManageProductDetailByApi = async () => {
+		const getData = await getProductDetailById(productId)
+		console.log(changePrice(100000000))
+		setProductDetail(getData)
+	}
+	useEffect(() => {
+		getNManageProductDetailByApi()
+	}, [setProductDetail])
+
 	return (
 		<CenterBox>
 			<S.Div_ImageWrap>
 				<S.But_LeftBtn />
-				<ImageBox
-					shape="default"
-					width="600rem"
-					height="500rem"
-					src={'https://source.unsplash.com/random'}
-				/>
+				<ImageCarousel width="44rem" imgSrcs={productDetail.srcs} />
 				<S.But_RightBtn />
 			</S.Div_ImageWrap>
 
@@ -19,43 +34,40 @@ const ProductPage = () => {
 				<S.Div_LeftProfileWrap>
 					<ProfileBadge />
 					<S.Div_InfoWrap>
-						<S.Div_NickName>nickName</S.Div_NickName>
-						<S.Div_Location>userLocation</S.Div_Location>
+						<S.Div_NickName
+							onClick={() => {
+								navigate(`/user/${productDetail.userId}`)
+							}}
+						>
+							{productDetail.userNickname}
+						</S.Div_NickName>
+						<S.Div_Location>{productDetail.userLocation}</S.Div_Location>
 					</S.Div_InfoWrap>
 				</S.Div_LeftProfileWrap>
 				<S.Div_RightProfileWrap>
 					<S.Dl_TampWrap>
 						<S.Dt_TampText>매너온도</S.Dt_TampText>
 						<S.Dd_TampTamp>
-							37.5
+							{productDetail.mannerTemperature}
 							<S.Spa_TampSpan>°C</S.Spa_TampSpan>
 						</S.Dd_TampTamp>
 						<S.Div_TampBox>
-							<S.Div_TampBar></S.Div_TampBar>
+							<S.Div_TampBar />
 						</S.Div_TampBox>
-						<S.Div_TampFace></S.Div_TampFace>
+						<S.Div_TampFace />
 					</S.Dl_TampWrap>
 				</S.Div_RightProfileWrap>
 			</S.A_ProfileLink>
 			<S.Sec_DescriptWrap>
-				<S.H1_DescriptTitle>상품 제목</S.H1_DescriptTitle>
+				<S.H1_DescriptTitle>{productDetail.productName}</S.H1_DescriptTitle>
 				<S.P_DescriptCategory>카테고리 5일전</S.P_DescriptCategory>
-				<S.P_DescriptPrice>상품가격 데이터에서</S.P_DescriptPrice>
-				<S.P_DescriptContent>
-					상품에 대한 설명을 적는 공간
-					<br />
-					상품에 대한 설명을 적는 공간
-					<br />
-					상품에 대한 설명을 적는 공간
-					<br />
-					상품에 대한 설명을 적는 공간
-					<br />
-					상품에 대한 설명을 적는 공간
-					<br />
-					상품에 대한 설명을 적는 공간
-					<br />
-				</S.P_DescriptContent>
-				<S.P_DescriptCount>관심 36 ∙ 채팅 41 ∙ 조회 1259</S.P_DescriptCount>
+				<S.P_DescriptPrice>
+					{changePrice(productDetail.productPrice)} 원
+				</S.P_DescriptPrice>
+				<S.P_DescriptContent>{productDetail.productDetail}</S.P_DescriptContent>
+				<S.P_DescriptCount>
+					관심 {productDetail.interestCnt} ∙ 채팅 {productDetail.chattingCnt}
+				</S.P_DescriptCount>
 			</S.Sec_DescriptWrap>
 		</CenterBox>
 	)
@@ -93,6 +105,7 @@ const Div_ImageWrap = styled.div`
 	margin-top: 8rem;
 	height: 500px;
 	width: 100%;
+	${flexAlign.flexCenter}
 `
 const A_ProfileLink = styled.a`
 	width: 100%;
