@@ -1,6 +1,8 @@
+import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
 import { worker } from './mocks/browser'
 import Router from './routers/router'
+import { store } from './stores/store'
 import GlobalStyles from './styles/global_styles'
 
 function App() {
@@ -9,8 +11,10 @@ function App() {
 	}
 	return (
 		<>
-			<GlobalStyles />
-			<RouterProvider router={Router} />
+			<Provider store={store}>
+				<GlobalStyles />
+				<RouterProvider router={Router} />
+			</Provider>
 		</>
 	)
 }
