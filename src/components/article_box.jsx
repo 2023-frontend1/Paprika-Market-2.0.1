@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { flexAlign, fontSize, fontWeight } from '../styles/themes/@index'
+import { color, flexAlign, fontSize, fontWeight } from '../styles/themes/@index'
 import ImageCarousel from './image_carousel'
 const ArticleBox = ({
 	title = '⚠️ No Data',
@@ -26,6 +26,7 @@ const ArticleBox = ({
 					<S.Spa_TextVotingItem> · </S.Spa_TextVotingItem>
 					<S.Spa_TextVotingItem>채팅 {numChat}</S.Spa_TextVotingItem>
 				</S.Sec_VotingResultSection>
+				<S.Btn_ZzimButton>찜하기</S.Btn_ZzimButton>
 			</S.Sec_TextSection>
 		</S.Div_Container>
 	)
@@ -45,6 +46,7 @@ const Div_Container = styled.div`
 	height: 36rem;
 	padding: 3px;
 	cursor: pointer;
+	position: relative;
 
 	${flexAlign.directionColumn}
 	${flexAlign.alignCenter}
@@ -76,6 +78,19 @@ const Spa_TextVotingItem = styled.span`
 	font-size: small;
 	margin-right: 5px;
 `
+const Btn_ZzimButton = styled.button`
+	font-size: ${fontSize.tiny};
+	font-weight: ${fontWeight.bold};
+	background-color: ${color.orange[100]};
+	border-radius: 10rem;
+	position: absolute;
+	right: 2rem;
+	bottom: 5rem;
+	padding: 0.5rem;
+	&:hover {
+		background-color: ${color.orange[50]};
+	}
+`
 
 const S = {
 	P_TextTitle,
@@ -85,4 +100,5 @@ const S = {
 	P_TextAddress,
 	Sec_VotingResultSection,
 	Spa_TextVotingItem,
+	Btn_ZzimButton,
 }
