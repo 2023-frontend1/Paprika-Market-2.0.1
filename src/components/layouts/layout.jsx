@@ -1,10 +1,10 @@
-import { Header, Footer } from './componets/@index'
+import { Header, Footer, SideBar } from './componets/@index'
 import { Outlet } from 'react-router-dom'
 const Layout = () => {
 	return (
 		<>
 			<Header />
-
+			<SideBar />
 			<Outlet />
 
 			<Footer />
